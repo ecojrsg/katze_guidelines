@@ -1,0 +1,648 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Katze — Brand Guideline (Graphite v3)</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Expletus+Sans:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./src/styles/graphite-v3.css" />
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://cdn.jsdelivr.net/npm/three@0.172.0/build/three.module.js",
+          "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.172.0/examples/jsm/"
+        }
+      }
+    </script>
+  </head>
+  <body class="iso" data-page="home">
+    <!-- Minimal Sticky Header (Mounted by site-nav.js) -->
+    <header class="v3-header" data-site-header></header>
+
+    <!-- Hero: Unboxed & Uncropped Floating 3D + n8n Bayer DitherTrailGrid -->
+    <section class="v3-hero dot-host">
+      <canvas class="dot-trail-layer" data-dot-trail data-placement="bottom" aria-hidden="true"></canvas>
+      <div class="wrap v3-hero-grid">
+        <div>
+          <h1 class="v3-hero-title">
+            Convertimos tecnología en <em>resultados.</em>
+          </h1>
+          <p class="v3-hero-lead">
+            Guía de diseño y principios visuales de Katze para construir interfaces web,
+            presentaciones ejecutivas y material gráfico con un mismo criterio técnico.
+          </p>
+        </div>
+
+        <!-- Completely unboxed floating 3D with generous framing (no clipping) -->
+        <div
+          class="v3-floating-3d"
+          data-three-stage
+          aria-label="Animación tridimensional de marca Katze"
+        ></div>
+      </div>
+    </section>
+
+    <!-- Post-Hero Architectural Divider Strip -->
+    <div class="v3-spec-strip">
+      <div class="v3-spec-cell">
+        BASE CROMÁTICA
+        <strong>Grafito #16161B · 0% negro puro</strong>
+      </div>
+      <div class="v3-spec-cell">
+        TEXTURA REACTIVA
+        <strong>Bayer 4×4 DitherTrailGrid (n8n)</strong>
+      </div>
+      <div class="v3-spec-cell">
+        IDENTIDAD 3D
+        <strong>KatzeFullShowcase flotante</strong>
+      </div>
+      <div class="v3-spec-cell">
+        TIPOGRAFÍA
+        <strong>Expletus Sans · Inter · JetBrains Mono</strong>
+      </div>
+    </div>
+
+    <!-- Section 1: Exact Langflow 3 Distinct Interactive Tiles (No Outer Card, No Bottom Tags) -->
+    <section id="principios" class="v3-section">
+      <div class="wrap">
+        <h2 class="v3-heading">Sobriedad en reposo. Claridad al interactuar.</h2>
+        <p class="v3-subhead">
+          Cada componente vive en monocromo grafito y reserva el acento Katze para el foco real.
+        </p>
+
+        <div class="lf3-row">
+          <!-- Tile 1: Dual Visible Slides + Purple Active Slide Outline + Clean Bottom Bar -->
+          <div class="lf3-item">
+            <div class="lf3-tile lf3-t1" data-slide="0" data-t1-tile>
+              <div class="lf3-t1-viewport">
+                <div class="lf3-t1-track">
+                  <!-- Slide 0: Web UI -->
+                  <div class="lf3-t1-slide is-current" data-t1-slide="0">
+                    <div class="lf3-t1-inner-card">
+                      <span class="lf3-t1-mini-title">katze.ui</span>
+                      <div class="lf3-t1-bars">
+                        <span style="width: 82%"></span>
+                        <span style="width: 58%"></span>
+                      </div>
+                      <span class="lf3-t1-mini-title">&gt;_</span>
+                    </div>
+                  </div>
+                  <!-- Slide 1: Slides 16:9 -->
+                  <div class="lf3-t1-slide" data-t1-slide="1">
+                    <div class="lf3-t1-inner-card">
+                      <span class="lf3-t1-mini-title">deck 16:9</span>
+                      <div class="lf3-t1-bars">
+                        <span style="width: 72%"></span>
+                        <span style="width: 44%"></span>
+                      </div>
+                      <span class="lf3-t1-mini-title">01 / 12</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="lf3-t1-bar" role="tablist" aria-label="Formato de aplicación">
+                <button
+                  type="button"
+                  class="lf3-t1-tab"
+                  role="tab"
+                  aria-selected="true"
+                  data-t1-set="0"
+                >
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <polyline points="4 17 10 11 4 5"></polyline>
+                    <line x1="12" y1="19" x2="20" y2="19"></line>
+                  </svg>
+                  <span>Web UI</span>
+                </button>
+                <button
+                  type="button"
+                  class="lf3-t1-tab"
+                  role="tab"
+                  aria-selected="false"
+                  data-t1-set="1"
+                >
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <rect x="2" y="4" width="20" height="14" rx="2"></rect>
+                    <line x1="8" y1="21" x2="16" y2="21"></line>
+                  </svg>
+                  <span>Slides 16:9</span>
+                </button>
+              </div>
+            </div>
+            <h3 class="lf3-caption">
+              Un mismo lenguaje para web, presentaciones y piezas gráficas
+            </h3>
+          </div>
+
+          <!-- Tile 2: Exact Anchored Curved SVG Lines (Pill -> Outer Edge / Center Square) -->
+          <div class="lf3-item">
+            <div class="lf3-tile lf3-t2">
+              <div class="lf3-t2-stage">
+                <svg class="lf3-t2-svg" viewBox="0 0 340 332" aria-hidden="true">
+                  <!-- TL pill right edge (108,54) -> top outer rim (174,0) -->
+                  <path d="M 108 54 C 146 54 166 28 174 0" fill="none" stroke="rgba(243,242,247,0.32)" stroke-width="1" />
+                  <!-- TR pill left edge (214,54) -> center square top edge (170,127) -->
+                  <path d="M 214 54 C 182 54 170 86 170 127" fill="none" stroke="rgba(243,242,247,0.32)" stroke-width="1" />
+                  <!-- BL pill right edge (132,278) -> center square bottom edge (170,205) -->
+                  <path d="M 132 278 C 158 278 170 246 170 205" fill="none" stroke="rgba(243,242,247,0.32)" stroke-width="1" />
+                  <!-- BR pill left edge (226,278) -> bottom outer rim (156,332) -->
+                  <path d="M 226 278 C 188 278 168 304 156 332" fill="none" stroke="rgba(243,242,247,0.32)" stroke-width="1" />
+                </svg>
+
+                <span class="lf3-t2-pill lf3-t2-pill--tl">0% #000</span>
+                <span class="lf3-t2-pill lf3-t2-pill--tr">WCAG AA</span>
+                <span class="lf3-t2-pill lf3-t2-pill--bl">GRID 8PX</span>
+                <span class="lf3-t2-pill lf3-t2-pill--br">EXPLETUS</span>
+
+                <div class="lf3-t2-nodes">
+                  <div class="lf3-t2-node" title="Símbolo Katze">
+                    <img src="./assets/katze-logo-purple.png" alt="Katze" />
+                  </div>
+                  <div class="lf3-t2-node" title="Espectro de color Katze">
+                    <div class="lf3-t2-swatch-dots">
+                      <span></span><span></span><span></span>
+                    </div>
+                  </div>
+                  <div class="lf3-t2-node" title="Tipografía Expletus Sans">
+                    <span class="display" style="font-size: 1.55rem; font-weight: 600">Aa</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <h3 class="lf3-caption">
+              Consistencia cromática sin negro puro y contraste verificado
+            </h3>
+          </div>
+
+          <!-- Tile 3: Binary Hourglass Passing THROUGH Center of Faded Pill -->
+          <div class="lf3-item">
+            <div class="lf3-tile lf3-t3">
+              <div class="lf3-t3-halo" aria-hidden="true"></div>
+              <div class="lf3-t3-pill">
+                <svg
+                  class="lf3-t3-icon lf3-t3-icon--left"
+                  width="26"
+                  height="26"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.8"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <polyline points="4 17 10 11 4 5"></polyline>
+                  <line x1="12" y1="19" x2="20" y2="19"></line>
+                </svg>
+                <svg
+                  class="lf3-t3-icon lf3-t3-icon--right"
+                  width="26"
+                  height="26"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.8"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <polygon points="12 3 21 12 12 21 3 12 12 3"></polygon>
+                  <circle cx="12" cy="12" r="2.2"></circle>
+                </svg>
+              </div>
+              <pre class="lf3-t3-binary" data-hourglass-stream aria-hidden="true"></pre>
+            </div>
+            <h3 class="lf3-caption">
+              Criterio visual que despierta solo cuando el usuario interactúa
+            </h3>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 2: Raycast Architectural Sheet with /anatomy Animated Isometric Figures -->
+    <section id="sistema" class="rc-sheet-section" aria-label="Hoja de diseño del sistema Katze">
+      <div class="rc-sheet-frame">
+        <div class="rc-grid">
+          <!-- Top fade spacer row -->
+          <div class="rc-cell rc-spacer-top rc-margin-col"></div>
+          <div class="rc-cell rc-spacer-top"></div>
+          <div class="rc-cell rc-spacer-top"></div>
+          <div class="rc-cell rc-spacer-top"></div>
+          <div class="rc-cell rc-spacer-top rc-margin-col"></div>
+
+          <!-- ROW 1: Title/Spec split col + FIG_01 (/anatomy Optical Layer Calibrator) -->
+          <div class="rc-cell rc-margin-col"></div>
+
+          <div class="rc-col-split">
+            <div class="rc-title-cell">
+              <h2>Sistema diseñado como plano técnico.</h2>
+            </div>
+            <a href="#identidad" class="rc-link-cell">
+              <p>
+                Cada superficie, línea divisoria y capa de elevación responde a reglas exactas
+                para que cualquier pieza de Katze mantenga orden sin esfuerzo.
+              </p>
+              <span class="rc-link-cta">
+                Explorar fundamentos
+                <svg class="rc-arrow" width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+                  <path d="M4.5 11.5L11.5 4.5M6 4.5H11.5V10" />
+                </svg>
+              </span>
+            </a>
+          </div>
+
+          <div class="rc-cell rc-dotted rc-span-2">
+            <div class="rc-fig-bar">
+              <span class="rc-fig-label">FIG_01</span>
+              <span class="rc-fig-hint">HOVER PARA SEPARAR CAPAS</span>
+            </div>
+            <div class="rc-diagram-wrap" data-anatomy-fig="01"></div>
+          </div>
+
+          <div class="rc-cell rc-margin-col"></div>
+
+          <!-- Horizontal 44px Spacer Row -->
+          <div class="rc-cell rc-spacer rc-margin-col"></div>
+          <div class="rc-cell rc-spacer"></div>
+          <div class="rc-cell rc-spacer"></div>
+          <div class="rc-cell rc-spacer"></div>
+          <div class="rc-cell rc-spacer rc-margin-col"></div>
+
+          <!-- ROW 2: FIG_02 (/anatomy 16:9 Drafting Frame) + Cross-format cell -->
+          <div class="rc-cell rc-margin-col"></div>
+
+          <div class="rc-cell rc-dotted rc-span-2">
+            <div class="rc-fig-bar">
+              <span class="rc-fig-label">FIG_02</span>
+              <span class="rc-fig-hint">VERNIER 16:9 EN VIVO</span>
+            </div>
+            <div class="rc-diagram-wrap" data-anatomy-fig="02"></div>
+          </div>
+
+          <a href="#identidad" class="rc-cell rc-feature-cell">
+            <div class="rc-feature-top">
+              <svg class="rc-arrow" width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+                <path d="M4.5 11.5L11.5 4.5M6 4.5H11.5V10" />
+              </svg>
+            </div>
+            <div class="rc-feature-body">
+              <h3>Web, slides y piezas</h3>
+              <p>
+                Diseña una vez bajo la misma retícula de 8px y escala de márgenes para que la web,
+                las presentaciones comerciales y los documentos PDF hablen el mismo idioma.
+              </p>
+            </div>
+          </a>
+
+          <div class="rc-cell rc-margin-col"></div>
+
+          <!-- ROW 3: FIG_03 (/anatomy Tactile Plunger + Gauge) + Primitives + FIG_04 (/anatomy State Deck) -->
+          <div class="rc-cell rc-margin-col"></div>
+
+          <div class="rc-cell rc-dotted">
+            <div class="rc-fig-bar">
+              <span class="rc-fig-label">FIG_03</span>
+              <span class="rc-fig-hint">CLIC PARA ACCIONAR</span>
+            </div>
+            <div class="rc-diagram-wrap" data-anatomy-fig="03"></div>
+          </div>
+
+          <a href="#principios" class="rc-cell rc-feature-cell">
+            <div class="rc-feature-top">
+              <svg class="rc-arrow" width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+                <path d="M4.5 11.5L11.5 4.5M6 4.5H11.5V10" />
+              </svg>
+            </div>
+            <div class="rc-feature-body">
+              <h3>Primitivas sobrias</h3>
+              <p>
+                Bordes de 1px, radios consistentes de 6 a 12px y una sola declaración de elevación:
+                borde o sombra, nunca tarjetas anidadas dentro de tarjetas.
+              </p>
+            </div>
+          </a>
+
+          <div class="rc-cell rc-dotted">
+            <div class="rc-fig-bar">
+              <span class="rc-fig-label">FIG_04</span>
+              <span class="rc-fig-hint">CLIC PARA ALTERNAR</span>
+            </div>
+            <div class="rc-diagram-wrap" data-anatomy-fig="04"></div>
+          </div>
+
+          <div class="rc-cell rc-margin-col"></div>
+
+          <!-- Bottom fade spacer row -->
+          <div class="rc-cell rc-spacer rc-margin-col"></div>
+          <div class="rc-cell rc-spacer"></div>
+          <div class="rc-cell rc-spacer"></div>
+          <div class="rc-cell rc-spacer"></div>
+          <div class="rc-cell rc-spacer rc-margin-col"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3: Brand Foundations (Palette, Centered Typography Ledger, Logo) -->
+    <section id="identidad" class="v3-section v3-section--compact-top">
+      <div class="wrap">
+        <h2 class="v3-heading">Fundamentos de identidad</h2>
+        <p class="v3-subhead">
+          Tokens base para mantener coherencia absoluta en interfaces, presentaciones y comunicación
+          visual. Haz clic en cualquier tono para copiar su código HEX.
+        </p>
+
+        <!-- Color Palette Strip -->
+        <div class="v3-block">
+          <div class="v3-block-head">
+            <h3 class="v3-block-title">Paleta Graphite (0% negro puro)</h3>
+            <span class="v3-block-note">PROPORCIÓN: 80% GRAFITO · 15% TINTA/LÍNEAS · 5% ACENTO</span>
+          </div>
+
+          <div class="palette-strip">
+            <button type="button" class="palette-col" data-copy-hex="#16161B">
+              <div class="palette-tone" style="background: #16161b"></div>
+              <div class="palette-info">
+                <div class="palette-name">Carbon</div>
+                <div class="palette-hex">#16161B</div>
+                <div class="palette-use">Lienzo base oscuro</div>
+              </div>
+            </button>
+
+            <button type="button" class="palette-col" data-copy-hex="#1E1E26">
+              <div class="palette-tone" style="background: #1e1e26"></div>
+              <div class="palette-info">
+                <div class="palette-name">Slate</div>
+                <div class="palette-hex">#1E1E26</div>
+                <div class="palette-use">Superficies y celdas</div>
+              </div>
+            </button>
+
+            <button type="button" class="palette-col" data-copy-hex="#252530">
+              <div class="palette-tone" style="background: #252530"></div>
+              <div class="palette-info">
+                <div class="palette-name">Graphite</div>
+                <div class="palette-hex">#252530</div>
+                <div class="palette-use">Hover sutil y bordes</div>
+              </div>
+            </button>
+
+            <button type="button" class="palette-col" data-copy-hex="#2E1A47">
+              <div class="palette-tone" style="background: #2e1a47"></div>
+              <div class="palette-info">
+                <div class="palette-name">Katze Plum</div>
+                <div class="palette-hex">#2E1A47</div>
+                <div class="palette-use">ADN original / slides</div>
+              </div>
+            </button>
+
+            <button type="button" class="palette-col" data-copy-hex="#9B5DE5">
+              <div class="palette-tone" style="background: #9b5de5"></div>
+              <div class="palette-info">
+                <div class="palette-name">Amethyst</div>
+                <div class="palette-hex">#9B5DE5</div>
+                <div class="palette-use">Acento interactivo</div>
+              </div>
+            </button>
+
+            <button type="button" class="palette-col" data-copy-hex="#D16FFF">
+              <div class="palette-tone" style="background: #d16fff"></div>
+              <div class="palette-info">
+                <div class="palette-name">Lavender</div>
+                <div class="palette-hex">#D16FFF</div>
+                <div class="palette-use">Foco, trail y brillos</div>
+              </div>
+            </button>
+
+            <button type="button" class="palette-col" data-copy-hex="#714B67">
+              <div class="palette-tone" style="background: #714b67"></div>
+              <div class="palette-info">
+                <div class="palette-name">Odoo Plum</div>
+                <div class="palette-hex">#714B67</div>
+                <div class="palette-use">Solo sello Partner</div>
+              </div>
+            </button>
+          </div>
+        </div>
+
+        <!-- Typography Ledger -->
+        <div class="v3-block">
+          <div class="v3-block-head">
+            <h3 class="v3-block-title">Tipografía</h3>
+            <span class="v3-block-note">MEDIDA EDITORIAL: 65–75 CH · TRACKING MÁX. -0.025EM</span>
+          </div>
+
+          <div class="type-ledger">
+            <div class="type-row">
+              <div class="type-role">
+                <strong>Expletus Sans</strong>
+                Display, marca y titulares · 500 / 600
+              </div>
+              <div class="display" style="font-size: clamp(1.6rem, 2.8vw, 2.4rem); font-weight: 600; line-height: 1.1">
+                Convertimos tecnología en resultados.
+              </div>
+            </div>
+
+            <div class="type-row">
+              <div class="type-role">
+                <strong>Inter</strong>
+                Lectura web y presentaciones · 300 / 400 / 500
+              </div>
+              <div style="font-size: 1rem; color: var(--ink-secondary); max-width: 66ch">
+                Recomendamos únicamente decisiones técnicas claras y sostenibles. Menos adorno en
+                pantalla significa más velocidad para comprender lo que importa.
+              </div>
+            </div>
+
+            <div class="type-row">
+              <div class="type-role">
+                <strong>JetBrains Mono</strong>
+                Tokens, cotas y datos · 400 / 500
+              </div>
+              <div class="mono" style="font-size: 0.86rem; color: var(--accent-bright)">
+                FIG_01 · #16161B → #9B5DE5 · GRID 8PX · ODOO READY PARTNER
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Logo Strip & Application Rules -->
+        <div class="v3-block">
+          <div class="v3-block-head">
+            <h3 class="v3-block-title">Logotipo y aplicaciones</h3>
+            <span class="v3-block-note">ÁREA DE RESPETO = 0.5× ALTURA DEL ISOTIPO</span>
+          </div>
+
+          <div class="logo-strip">
+            <div class="logo-cell" style="background: #16161b">
+              <div class="logo-lockup-inline">
+                <img src="./assets/katze-logo-purple.png" alt="Katze" style="filter: brightness(0) invert(1)" />
+                <span class="display" style="font-size: 1.25rem; font-weight: 600; color: #f3f2f7">Katze</span>
+              </div>
+              <span class="logo-caption">Primario · #16161B</span>
+            </div>
+
+            <div class="logo-cell" style="background: #2e1a47">
+              <div class="logo-lockup-inline">
+                <img src="./assets/katze-logo-purple.png" alt="Katze" style="filter: brightness(0) invert(1)" />
+                <span class="display" style="font-size: 1.25rem; font-weight: 600; color: #ffffff">Katze</span>
+              </div>
+              <span class="logo-caption">Portadas &amp; Slides · #2E1A47</span>
+            </div>
+
+            <div class="logo-cell" style="background: #f3f2f7; color: #2e1a47">
+              <div class="logo-lockup-inline">
+                <img src="./assets/katze-logo-purple.png" alt="Katze" />
+                <span class="display" style="font-size: 1.25rem; font-weight: 600; color: #2e1a47">Katze</span>
+              </div>
+              <span class="logo-caption" style="color: #2e1a47">PDF / Documentos claros</span>
+            </div>
+
+            <div class="logo-cell" style="background: #1e1e26">
+              <div class="logo-lockup-inline">
+                <img src="./assets/katze-logo-purple.png" alt="Katze" style="width: 28px; height: 28px; filter: brightness(0) invert(1)" />
+                <span class="mono" style="font-size: 0.72rem; color: #d16fff">× ODOO READY</span>
+              </div>
+              <span class="logo-caption">Co-branding oficial</span>
+            </div>
+          </div>
+
+          <div class="rules-row">
+            <div class="rules-col">
+              <h4>Qué sí aplicar (Web, Slides y Gráficos)</h4>
+              <ul class="rules-list">
+                <li>Usar espacio negativo generoso y divisores finos de 1px en lugar de cajas apiladas.</li>
+                <li>Mantener los elementos interactivos en monocromo y activar violeta solo en foco o estado activo.</li>
+                <li>Presentar modelos 3D libres sobre el lienzo con margen amplio para que nunca se recorten.</li>
+              </ul>
+            </div>
+            <div class="rules-col">
+              <h4>Qué evitar</h4>
+              <ul class="rules-list rules-list--avoid">
+                <li>Fondos o tipografías en negro puro (#000000) o degradados estridentes sobre texto.</li>
+                <li>Saturar la pantalla con botones secundarios, etiquetas decorativas o tarjetas dentro de tarjetas.</li>
+                <li>Diagramas planos de cajas y flechas; reemplazarlos siempre por sólidos isométricos de precisión.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 4: Brand Knowledge (Institutional Essence of Katze) -->
+    <section id="knowledge" class="v3-section knowledge-section">
+      <div class="wrap knowledge-grid">
+        <div>
+          <h2 class="v3-heading">Brand Knowledge</h2>
+          <p class="knowledge-prose">
+            Katze es una firma de consultoría tecnológica, arquitectura DevOps e implementación
+            oficial de Odoo (<strong>Odoo Ready Partner</strong>) enfocada en pequeñas y medianas
+            empresas del sector productivo.
+          </p>
+          <p class="knowledge-prose">
+            La empresa nació tras auditar un sistema monolítico inviable y rescatar a un cliente
+            que ya había perdido casi $1.7M MXN en una implementación ERP fallida. Ese origen
+            define todo lo que comunicamos: criterio honesto antes que promesas comerciales.
+          </p>
+        </div>
+
+        <div class="knowledge-ledger">
+          <div class="knowledge-row">
+            <div class="knowledge-key">ESLOGAN</div>
+            <div class="knowledge-val">
+              Convertimos tecnología en resultados.
+              <span>Respaldado por el principio interno: “El sistema sigue al criterio.”</span>
+            </div>
+          </div>
+
+          <div class="knowledge-row">
+            <div class="knowledge-key">ESPECIALIDAD</div>
+            <div class="knowledge-val">
+              Asesoría tech, DevOps e implementación de Odoo
+              <span>Foco en manufactura, inventarios, compras, finanzas e infraestructura estable para PyMEs productivas.</span>
+            </div>
+          </div>
+
+          <div class="knowledge-row">
+            <div class="knowledge-key">SÍMBOLO</div>
+            <div class="knowledge-val">
+              Emblema geométrico interno + silueta felina
+              <span>Une la precisión técnica de ingeniería y servidores con el carácter cercano del equipo que da rostro a Katze.</span>
+            </div>
+          </div>
+
+          <div class="knowledge-row">
+            <div class="knowledge-key">VOZ Y TONO</div>
+            <div class="knowledge-val">
+              Directo, honesto y técnicamente claro
+              <span>Sin humo comercial ni jerga innecesaria. Cada palabra y cada píxel deben justificar su lugar.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 5: IA Knowledge (Skills Used + Mandatory AI Design Directives) -->
+    <section id="ia-knowledge" class="v3-section knowledge-section">
+      <div class="wrap knowledge-grid">
+        <div>
+          <h2 class="v3-heading">IA Knowledge</h2>
+          <p class="knowledge-prose">
+            Referencia técnica para cualquier agente o modelo de IA que genere páginas web,
+            presentaciones, piezas gráficas o diagramas para <strong>Katze</strong>. Incluye las
+            skills empleadas para construir esta guía y las restricciones obligatorias de marca.
+          </p>
+          <button type="button" class="ia-copy-btn" data-copy-ai-prompt>
+            <span>Copiar prompt base de marca para IA</span>
+            <span>↗</span>
+          </button>
+        </div>
+
+        <div class="knowledge-ledger">
+          <div class="knowledge-row">
+            <div class="knowledge-key">SKILL · IMPECCABLE</div>
+            <div class="knowledge-val">
+              Destilación minimalista y Craft Floor
+              <span>Usada para eliminar tarjetas anidadas, kickers/eyebrows sobre títulos, botones redundantes, texto con degradado y para tematizar superficies del navegador (selección, scrollbars, foco y numerales tabulares).</span>
+            </div>
+          </div>
+
+          <div class="knowledge-row">
+            <div class="knowledge-key">SKILL · ANATOMY</div>
+            <div class="knowledge-val">
+              Figuras isométricas sólidas (<code>iso-kit.mjs</code>)
+              <span>Usada en <code>FIG_01</code>–<code>FIG_04</code> para explicar conceptos como instrumentos físicos reales con sombreado en 4 tonos, orden de profundidad correcto y animación calma pausada fuera de pantalla.</span>
+            </div>
+          </div>
+
+          <div class="knowledge-row">
+            <div class="knowledge-key">COMPONENTES CLAVE</div>
+            <div class="knowledge-val">
+              DitherTrailGrid (n8n) + Three.js + Langflow + Raycast
+              <span>Matriz Bayer 4×4 pixelada 4× con cola FIFO violeta; modelos <code>.glb</code> flotando sin contenedor; cuadros monocromo→luz sin card externa; hoja técnica continua de 5 columnas con líneas de 1px.</span>
+            </div>
+          </div>
+
+          <div class="knowledge-row">
+            <div class="knowledge-key">REGLAS PARA LA IA</div>
+            <div class="knowledge-val">
+              Invariantes estrictas en cualquier entregable Katze
+              <span>1) Prohibido #000000: usar #16161B / #1E1E26 / #252530. 2) Proporción 80% grafito, 15% tinta/líneas, 5% acento (#9B5DE5 / #D16FFF). 3) Tipografía: Expletus Sans (display), Inter (65–75ch cuerpo), JetBrains Mono (solo datos/tokens). 4) Eslogan: “Convertimos tecnología en resultados.” 5) Respetar sobriedad en reposo y cero relleno comercial.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Architectural Footer (Mounted by site-nav.js) -->
+    <footer class="v3-footer" data-site-footer></footer>
+
+    <script type="module" src="./src/pages/home.js"></script>
+  </body>
+</html>

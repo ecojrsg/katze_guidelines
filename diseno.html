@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Katze — Guía de Diseño y Skill IA</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Expletus+Sans:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./src/styles/graphite-v3.css" />
+    <link rel="stylesheet" href="./src/styles/pages.css" />
+  </head>
+  <body class="iso" data-page="diseno">
+    <header class="v3-header" data-site-header></header>
+
+    <main>
+      <!-- Hero -->
+      <section class="page-hero dot-host">
+        <canvas class="dot-trail-layer" data-dot-trail data-placement="bottom" aria-hidden="true"></canvas>
+        <div class="wrap page-hero-inner">
+          <h1 class="page-hero-title">
+            Guía de <em>Diseño</em> &amp; Skill para IA
+          </h1>
+          <p class="page-hero-lead">
+            Referencia visual completa de Katze: cómo luce nuestra colorimetría sin negro puro,
+            nuestra tipografía, el efecto punteado Bayer 4×4 de n8n y los gráficos descargables en
+            PNG y SVG listos para presentaciones o contexto de IA.
+          </p>
+          <div class="page-actions">
+            <a
+              href="./skill/katze-design-system/SKILL.md"
+              download="SKILL.md"
+              class="k-btn k-btn--primary"
+            >
+              Descargar SKILL.md ↓
+            </a>
+            <button type="button" class="k-btn" data-copy-skill-md>
+              <span>Copiar SKILL.md</span>
+              <span>↗</span>
+            </button>
+            <a href="#activos" class="k-btn">Ir a descargas PNG / SVG</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Colorimetry & Typography -->
+      <section class="ruled-section">
+        <div class="wrap">
+          <h2 class="v3-heading">Colorimetría y tipografía</h2>
+          <p class="v3-subhead">
+            Proporción estricta 80% grafito, 15% tinta y líneas de 1px, 5% acento violeta solo en
+            foco. Haz clic en cualquier tono para copiar su HEX.
+          </p>
+
+          <div class="v3-block" style="margin-top: 32px">
+            <div class="palette-strip">
+              <button type="button" class="palette-col" data-copy-hex="#16161B">
+                <div class="palette-tone" style="background: #16161b"></div>
+                <div class="palette-info">
+                  <div class="palette-name">Carbon</div>
+                  <div class="palette-hex">#16161B</div>
+                  <div class="palette-use">Base 0% #000000</div>
+                </div>
+              </button>
+              <button type="button" class="palette-col" data-copy-hex="#1E1E26">
+                <div class="palette-tone" style="background: #1e1e26"></div>
+                <div class="palette-info">
+                  <div class="palette-name">Slate</div>
+                  <div class="palette-hex">#1E1E26</div>
+                  <div class="palette-use">Superficies</div>
+                </div>
+              </button>
+              <button type="button" class="palette-col" data-copy-hex="#252530">
+                <div class="palette-tone" style="background: #252530"></div>
+                <div class="palette-info">
+                  <div class="palette-name">Graphite</div>
+                  <div class="palette-hex">#252530</div>
+                  <div class="palette-use">Hover y bordes</div>
+                </div>
+              </button>
+              <button type="button" class="palette-col" data-copy-hex="#2E1A47">
+                <div class="palette-tone" style="background: #2e1a47"></div>
+                <div class="palette-info">
+                  <div class="palette-name">Katze Plum</div>
+                  <div class="palette-hex">#2E1A47</div>
+                  <div class="palette-use">ADN / portadas</div>
+                </div>
+              </button>
+              <button type="button" class="palette-col" data-copy-hex="#9B5DE5">
+                <div class="palette-tone" style="background: #9b5de5"></div>
+                <div class="palette-info">
+                  <div class="palette-name">Amethyst</div>
+                  <div class="palette-hex">#9B5DE5</div>
+                  <div class="palette-use">Acento activo</div>
+                </div>
+              </button>
+              <button type="button" class="palette-col" data-copy-hex="#D16FFF">
+                <div class="palette-tone" style="background: #d16fff"></div>
+                <div class="palette-info">
+                  <div class="palette-name">Lavender</div>
+                  <div class="palette-hex">#D16FFF</div>
+                  <div class="palette-use">Foco / glow</div>
+                </div>
+              </button>
+              <button type="button" class="palette-col" data-copy-hex="#714B67">
+                <div class="palette-tone" style="background: #714b67"></div>
+                <div class="palette-info">
+                  <div class="palette-name">Odoo Plum</div>
+                  <div class="palette-hex">#714B67</div>
+                  <div class="palette-use">Solo Partner</div>
+                </div>
+              </button>
+            </div>
+          </div>
+
+          <div class="v3-block" style="margin-top: 44px">
+            <div class="type-ledger">
+              <div class="type-row">
+                <div class="type-role">
+                  <strong>Expletus Sans</strong>
+                  Display, logotipo y titulares · 500 / 600
+                </div>
+                <div class="display" style="font-size: clamp(1.55rem, 2.7vw, 2.35rem); font-weight: 600; line-height: 1.1">
+                  Convertimos tecnología en resultados.
+                </div>
+              </div>
+              <div class="type-row">
+                <div class="type-role">
+                  <strong>Inter</strong>
+                  Cuerpo editorial y captions · 300 / 400 / 500
+                </div>
+                <div style="font-size: 0.98rem; color: var(--ink-secondary); max-width: 66ch">
+                  Jerarquía clara, medida editorial entre 65 y 75 caracteres y espacio negativo
+                  generoso en web y presentaciones.
+                </div>
+              </div>
+              <div class="type-row">
+                <div class="type-role">
+                  <strong>JetBrains Mono</strong>
+                  Tokens, cotas FIG_XX y datos · 400 / 500
+                </div>
+                <div class="mono" style="font-size: 0.85rem; color: var(--accent-bright)">
+                  #16161B · #9B5DE5 · #D16FFF · BAYER_4X4 · 1920×1080
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Visual Explanation of the n8n Bayer 4x4 Dotted Texture -->
+      <section class="ruled-section">
+        <div class="wrap">
+          <h2 class="v3-heading">Cómo se ve el efecto punteado (n8n Bayer 4×4)</h2>
+          <p class="v3-subhead">
+            Malla pixelada de micro-cruces generada por dithering Bayer 4×4 que se desvanece hacia
+            el lienzo. Prueba sus 4 posiciones y observa el trazo al mover el cursor o en modo
+            automático.
+          </p>
+
+          <div class="placement-tabs" role="tablist" aria-label="Posiciones de textura punteada">
+            <button type="button" class="placement-tab is-active" data-dither-pos="bottom">Abajo (bottom)</button>
+            <button type="button" class="placement-tab" data-dither-pos="right">Derecha (right)</button>
+            <button type="button" class="placement-tab" data-dither-pos="top">Arriba (top)</button>
+            <button type="button" class="placement-tab" data-dither-pos="diagonal-right">Diagonal derecha</button>
+          </div>
+
+          <div class="dither-stage" data-placement="bottom" data-dither-preview>
+            <canvas class="dot-trail-layer" data-dither-preview-canvas aria-hidden="true"></canvas>
+            <div class="dither-stage-copy">
+              <h4 data-dither-title>Emplazamiento inferior (bottom)</h4>
+              <p data-dither-desc>
+                Ancla visual para Heroes y portadas. Mueve el mouse aquí para encender el rastro
+                #D16FFF → #9B5DE5 o espera 3 s para ver el recorrido ortogonal automático.
+              </p>
+            </div>
+          </div>
+
+          <div class="split-2">
+            <div class="split-cell">
+              <h3>Con el cursor (interacción)</h3>
+              <p>
+                El puntero enciende celdas exactas de 16×16 px sin difuminado circular. La cabeza
+                brilla sólida en Lavender (<code>#D16FFF</code>) y la cola se disuelve en orden
+                FIFO eliminando micro-píxeles en patrón Bayer (sólido → cruz → puntos finos)
+                mientras pasa hacia Amethyst (<code>#9B5DE5</code>).
+              </p>
+            </div>
+            <div class="split-cell">
+              <h3>Automático y en presentaciones</h3>
+              <p>
+                Cuando no hay movimiento de mouse, trazos ortogonales de 16 a 28 pasos recorren la
+                malla simulando telemetría calma. Para diapositivas estáticas (PowerPoint, Slides o
+                PDF), basta insertar cualquiera de los gráficos PNG o SVG descargables abajo.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Downloadable Screenshots & Presentation Graphics (PNG + SVG) -->
+      <section id="activos" class="ruled-section">
+        <div class="wrap">
+          <h2 class="v3-heading">Capturas y gráficos descargables</h2>
+          <p class="v3-subhead">
+            Todos los activos residen dentro de la carpeta de la skill
+            (<code>skill/katze-design-system/assets/</code>) listos para arrastrar a
+            presentaciones o referenciar desde una IA.
+          </p>
+
+          <div class="asset-grid" data-asset-gallery></div>
+        </div>
+      </section>
+
+      <!-- Rendered SKILL.md Document -->
+      <section id="skill-md" class="ruled-section">
+        <div class="wrap">
+          <h2 class="v3-heading">Skill visual completa (SKILL.md)</h2>
+          <p class="v3-subhead">
+            Este mismo documento vive en <code>skill/katze-design-system/SKILL.md</code> y se carga
+            en vivo para que humanos y agentes de IA consulten exactamente la misma fuente.
+          </p>
+
+          <div class="skill-doc-frame">
+            <div class="skill-doc-bar">
+              <span class="skill-doc-path">skill/katze-design-system/SKILL.md</span>
+              <div style="display: flex; gap: 8px; flex-wrap: wrap">
+                <button type="button" class="dl-link" data-copy-skill-md>Copiar Markdown</button>
+                <a href="./skill/katze-design-system/SKILL.md" download="SKILL.md" class="dl-link">
+                  Descargar .md ↓
+                </a>
+              </div>
+            </div>
+            <article class="skill-doc-body" data-skill-render>
+              Cargando guía visual SKILL.md...
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="v3-footer" data-site-footer></footer>
+    <script type="module" src="./src/pages/diseno.js"></script>
+  </body>
+</html>

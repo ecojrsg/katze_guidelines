@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Katze — Componentes Clave</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Expletus+Sans:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./src/styles/graphite-v3.css" />
+    <link rel="stylesheet" href="./src/styles/pages.css" />
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://cdn.jsdelivr.net/npm/three@0.172.0/build/three.module.js",
+          "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.172.0/examples/jsm/"
+        }
+      }
+    </script>
+  </head>
+  <body class="iso" data-page="componentes">
+    <header class="v3-header" data-site-header></header>
+
+    <main>
+      <section class="page-hero page-hero--diag-dots dot-host">
+        <canvas class="dot-trail-layer" data-dot-trail data-placement="diagonal-right" aria-hidden="true"></canvas>
+        <div class="wrap page-hero-inner">
+          <h1 class="page-hero-title">
+            Componentes <em>Clave</em>
+          </h1>
+          <p class="page-hero-lead">
+            Catálogo interactivo de las piezas principales del sistema Graphite v3. Selecciona cada
+            componente para probar su comportamiento en vivo, revisar sus reglas visuales, ver su
+            implementación en HTML/CSS/JS puros y copiar el prompt listo para IA.
+          </p>
+        </div>
+      </section>
+
+      <section class="ruled-section">
+        <div class="wrap">
+          <h2 class="v3-heading">Explorador interactivo</h2>
+          <p class="v3-subhead">
+            Cada pieza cumple una sola responsabilidad visual, evita tarjetas anidadas y respeta
+            el 0% negro puro (<code>#16161B</code>).
+          </p>
+
+          <div class="comp-layout" data-component-workbench>
+            <nav class="comp-rail" aria-label="Lista de componentes Katze" data-comp-rail></nav>
+
+            <div class="comp-stage">
+              <div class="comp-stage-head">
+                <h2 data-comp-title>Cargando componente...</h2>
+                <p data-comp-summary></p>
+              </div>
+
+              <div class="comp-live-box" data-comp-live></div>
+
+              <div class="comp-details-grid">
+                <div class="comp-detail-cell">
+                  <div class="comp-detail-head">
+                    <h3>Reglas de diseño</h3>
+                  </div>
+                  <ul class="rules-list" data-comp-rules></ul>
+                </div>
+
+                <div class="comp-detail-cell">
+                  <div class="comp-detail-head">
+                    <h3>Cómo se implementa</h3>
+                    <button type="button" class="dl-link" data-copy-snippet>Copiar código</button>
+                  </div>
+                  <pre class="comp-code" data-comp-code></pre>
+                </div>
+              </div>
+
+              <div class="comp-prompt-cell">
+                <div class="comp-detail-head">
+                  <h3>Prompt listo para IA</h3>
+                  <button type="button" class="k-btn" data-copy-prompt>
+                    <span>Copiar prompt</span>
+                    <span>↗</span>
+                  </button>
+                </div>
+                <pre class="comp-code" data-comp-prompt></pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="v3-footer" data-site-footer></footer>
+    <script type="module" src="./src/pages/componentes.js"></script>
+  </body>
+</html>

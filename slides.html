@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Katze — Estilo Frontend Slides y Presentación</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Expletus+Sans:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./src/styles/graphite-v3.css" />
+    <link rel="stylesheet" href="./src/styles/pages.css" />
+  </head>
+  <body class="iso" data-page="slides">
+    <header class="v3-header" data-site-header></header>
+
+    <main>
+      <!-- Hero with the 2 primary required buttons -->
+      <section class="page-hero page-hero--diag-dots dot-host">
+        <canvas class="dot-trail-layer" data-dot-trail data-placement="diagonal-right" aria-hidden="true"></canvas>
+        <div class="wrap page-hero-inner">
+          <h1 class="page-hero-title">
+            Presentaciones <em>Frontend Slides</em>
+          </h1>
+          <p class="page-hero-lead">
+            Guía para recrear el estilo de presentaciones Katze Graphite en escenario fijo 16:9
+            (<code>1920×1080</code>), más la presentación oficial de nuestra Guía de Diseño lista
+            para explorar aquí mismo o descargar en PDF.
+          </p>
+
+          <div class="page-actions">
+            <button type="button" class="k-btn k-btn--primary" data-open-deck-inline>
+              <span>Ver presentación en esta página</span>
+              <span>↓</span>
+            </button>
+            <a
+              href="./presentacion/katze-guideline-deck.pdf"
+              download="katze-brand-guideline-slides.pdf"
+              class="k-btn"
+            >
+              <span>Descargar PDF</span>
+              <span>↓</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Live Embedded 16:9 Presentation Viewer -->
+      <section id="visor-slides" class="ruled-section">
+        <div class="wrap">
+          <h2 class="v3-heading">Presentación oficial de la Guía de Diseño</h2>
+          <p class="v3-subhead">
+            12 láminas interactivas construidas con el estilo Katze en <code>/frontend-slides</code>.
+            Usa las flechas del teclado, los botones inferiores o ábrela en pantalla completa.
+          </p>
+
+          <div class="deck-embed-shell" data-deck-shell>
+            <div class="deck-embed-bar">
+              <span>presentacion/katze-guideline-deck.html · 1920×1080 · 12 SLIDES</span>
+              <div style="display: flex; gap: 8px; flex-wrap: wrap">
+                <a
+                  href="./presentacion/katze-guideline-deck.html"
+                  target="_blank"
+                  rel="noopener"
+                  class="dl-link"
+                >
+                  Abrir pantalla completa ↗
+                </a>
+                <a
+                  href="./presentacion/katze-guideline-deck.pdf"
+                  download="katze-brand-guideline-slides.pdf"
+                  class="dl-link"
+                >
+                  Descargar PDF ↓
+                </a>
+              </div>
+            </div>
+            <div class="deck-embed-frame-wrap">
+              <iframe
+                class="deck-embed-frame"
+                src="./presentacion/katze-guideline-deck.html"
+                title="Presentación Guía de Diseño de Marca Katze"
+                loading="lazy"
+              ></iframe>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Guide to Recreate the Katze Style in /frontend-slides -->
+      <section class="ruled-section">
+        <div class="wrap">
+          <h2 class="v3-heading">Cómo recrear este estilo en /frontend-slides</h2>
+          <p class="v3-subhead">
+            Arquetipos de diapositiva y reglas obligatorias para generar nuevas presentaciones de
+            Katze manteniendo identidad exacta en cada deck.
+          </p>
+
+          <div class="slide-archetype-grid">
+            <article class="archetype-cell">
+              <span class="archetype-tag">ARQUETIPO 01 · PUNTOS BAYER (4 POSICIONES)</span>
+              <h3>Textura n8n que despeja el contenido</h3>
+              <p>
+                Coloca la malla Bayer 4×4 con rastro <code>#D16FFF → #9B5DE5</code> en
+                <strong>abajo</strong> (portadas), <strong>derecha</strong> (texto a la
+                izquierda), <strong>arriba</strong> (tablas/valores abajo) o
+                <strong>diagonal derecha</strong> (cierre y misión/visión).
+              </p>
+              <a href="./diseno.html#activos" class="dl-link">Descargar SVG/PNG de los 4 lados →</a>
+            </article>
+
+            <article class="archetype-cell">
+              <span class="archetype-tag">ARQUETIPO 02 · PLANO TÉCNICO RAYCAST</span>
+              <h3>Hoja de diseño de 5 columnas (1px)</h3>
+              <p>
+                Rejilla fija <code>110px 460px 620px 620px 110px</code> con líneas de
+                <code>1px</code>, celdas punteadas <code>#15151A</code> para
+                <code>FIG_01</code>–<code>FIG_04</code> y cero tarjetas anidadas.
+              </p>
+              <span class="mono" style="font-size: 0.72rem; color: var(--ink-muted)">
+                Ver Slide 09 en la presentación superior
+              </span>
+            </article>
+
+            <article class="archetype-cell">
+              <span class="archetype-tag">ARQUETIPO 03 · FLOTANTES /ANATOMY</span>
+              <h3>Instrumentos físicos sólidos</h3>
+              <p>
+                Cuando una lámina necesite ilustrar arquitectura, estados o procesos, usa sólidos
+                isométricos de <code>iso-kit.mjs</code> con 4 tonos grafito y una sola pieza
+                iluminada en <code>#D16FFF</code>.
+              </p>
+              <span class="mono" style="font-size: 0.72rem; color: var(--ink-muted)">
+                Ver Slides 01, 09 y 10
+              </span>
+            </article>
+
+            <article class="archetype-cell">
+              <span class="archetype-tag">ARQUETIPO 04 · SOBRIEDAD EN REPOSO</span>
+              <h3>Cuadros flotantes monocromo → luz</h3>
+              <p>
+                Tres bloques redondeados (<code>radius: 26px</code>, brillo interior blanco sutil y
+                acento violeta interno) con su frase ligera en <code>Inter 300</code> debajo, sin
+                contenedor externo.
+              </p>
+              <span class="mono" style="font-size: 0.72rem; color: var(--ink-muted)">
+                Ver Slide 08 en la presentación superior
+              </span>
+            </article>
+          </div>
+
+          <div class="v3-block" style="margin-top: 44px">
+            <div class="v3-block-head">
+              <h3 class="v3-block-title">Prompt para recrear un deck Katze con /frontend-slides</h3>
+              <div style="display: flex; gap: 8px; flex-wrap: wrap">
+                <button type="button" class="k-btn" data-copy-slides-prompt>
+                  <span>Copiar prompt</span>
+                  <span>↗</span>
+                </button>
+                <a
+                  href="./skill/katze-frontend-slides/STYLE_GUIDE.md"
+                  download="STYLE_GUIDE.md"
+                  class="k-btn"
+                >
+                  Descargar STYLE_GUIDE.md ↓
+                </a>
+              </div>
+            </div>
+            <pre class="comp-code" data-slides-prompt></pre>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="v3-footer" data-site-footer></footer>
+    <script type="module" src="./src/pages/slides.js"></script>
+  </body>
+</html>
