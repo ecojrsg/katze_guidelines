@@ -78,22 +78,24 @@ const COMPONENTS = [
     summary:
       'División arquitectónica horizontal de 4 columnas separadas por líneas finas de 1px justo debajo del Hero para anclar los 4 pilares técnicos de la guía.',
     rules: [
-      'Fondo #18181F con bordes superior, inferior y verticales en rgba(243, 242, 247, 0.085).',
+      'Fondo #18181F a todo lo ancho con bordes superior e inferior de 1px; contenido centrado dentro de .v3-spec-grid.wrap (max 1160px) dejando vacíos los costados en pantallas anchas.',
       'Etiqueta superior en JetBrains Mono 0.70rem en mayúsculas; valor en Inter 0.84rem peso 500.',
       'Colapsa a 2 columnas en móvil (< 820px) sin desbordamiento horizontal.',
     ],
     snippet: `<div class="v3-spec-strip">
-  <div class="v3-spec-cell">
-    BASE CROMÁTICA
-    <strong>Grafito #16161B · 0% negro puro</strong>
+  <div class="v3-spec-grid wrap">
+    <div class="v3-spec-cell">
+      BASE CROMÁTICA
+      <strong>Grafito #16161B · 0% negro puro</strong>
+    </div>
+    <div class="v3-spec-cell">
+      TEXTURA REACTIVA
+      <strong>Bayer 4×4 DitherTrailGrid (n8n)</strong>
+    </div>
+    <!-- 4 celdas en total -->
   </div>
-  <div class="v3-spec-cell">
-    TEXTURA REACTIVA
-    <strong>Bayer 4×4 DitherTrailGrid (n8n)</strong>
-  </div>
-  <!-- 4 celdas en total -->
 </div>`,
-    prompt: `Agrega una franja divisoria arquitectónica de 4 columnas a todo lo ancho debajo del Hero para Katze. Fondo #18181F, separadores de 1px en rgba(243,242,247,0.085), sin border-radius ni sombras. Cada celda lleva una etiqueta corta en JetBrains Mono (#767385) arriba y un valor conciso en Inter 500 (#F3F2F7) abajo. En pantallas menores a 820px pasa a 2 columnas.`,
+    prompt: `Agrega una franja divisoria arquitectónica debajo del Hero para Katze con fondo #18181F y bordes superior/inferior de 1px a todo lo ancho, pero con sus 4 columnas centradas dentro del contenedor principal (.wrap, máx. 1160px) dejando vacíos los costados en pantallas anchas. Separadores de 1px en rgba(243,242,247,0.085), sin border-radius ni sombras. Cada celda lleva una etiqueta corta en JetBrains Mono (#767385) arriba y un valor conciso en Inter 500 (#F3F2F7) abajo. En pantallas menores a 820px pasa a 2 columnas.`,
     mount: mountSpecStripDemo,
   },
   {
@@ -292,21 +294,23 @@ function mountFloating3dDemo(container) {
 function mountSpecStripDemo(container) {
   container.innerHTML = `
     <div class="v3-spec-strip" style="border: 1px solid var(--hairline); border-radius: 8px; overflow: hidden;">
-      <div class="v3-spec-cell">
-        BASE CROMÁTICA
-        <strong>Grafito #16161B · 0% negro puro</strong>
-      </div>
-      <div class="v3-spec-cell">
-        TEXTURA REACTIVA
-        <strong>Bayer 4×4 DitherTrailGrid (n8n)</strong>
-      </div>
-      <div class="v3-spec-cell">
-        IDENTIDAD 3D
-        <strong>KatzeFullShowcase flotante</strong>
-      </div>
-      <div class="v3-spec-cell">
-        TIPOGRAFÍA
-        <strong>Expletus Sans · Inter · JetBrains Mono</strong>
+      <div class="v3-spec-grid" style="border-left: 0; border-right: 0;">
+        <div class="v3-spec-cell">
+          BASE CROMÁTICA
+          <strong>Grafito #16161B · 0% negro puro</strong>
+        </div>
+        <div class="v3-spec-cell">
+          TEXTURA REACTIVA
+          <strong>Bayer 4×4 DitherTrailGrid (n8n)</strong>
+        </div>
+        <div class="v3-spec-cell">
+          IDENTIDAD 3D
+          <strong>KatzeFullShowcase flotante</strong>
+        </div>
+        <div class="v3-spec-cell">
+          TIPOGRAFÍA
+          <strong>Expletus Sans · Inter · JetBrains Mono</strong>
+        </div>
       </div>
     </div>
   `;
