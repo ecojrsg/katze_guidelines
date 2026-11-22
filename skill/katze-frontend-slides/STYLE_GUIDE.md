@@ -1,11 +1,17 @@
 ---
 name: katze-frontend-slides-style
-description: Guía oficial para recrear el estilo de presentaciones de Katze (Graphite) con la skill /frontend-slides. Define escenario fijo 1920×1080, los 4 emplazamientos de textura punteada Bayer 4×4, el formato de plano técnico de 5 columnas y los elementos flotantes con /anatomy y Sobriedad en reposo.
+description: Guía oficial para recrear el estilo de presentaciones de Katze (katze-graphite) registrado en /frontend-slides. Define escenario fijo 1920×1080, la regla no negociable de textura punteada Bayer 4×4 SIEMPRE interactiva en HTML (4 emplazamientos), el formato de plano técnico de 5 columnas y los elementos flotantes interactivos con /anatomy y Sobriedad en reposo.
 ---
 
-# Katze Presentation Style — Guía para `/frontend-slides`
+# Katze Presentation Style (`katze-graphite`) — Guía para `/frontend-slides`
 
 Esta guía documenta cómo recrear desde cero una presentación con la identidad **Katze Graphite** dentro de **`/frontend-slides`** (HTML autocontenido, cero dependencias externas, escenario fijo 16:9).
+
+El estilo está registrado oficialmente en el pack de `/frontend-slides` bajo el slug **`katze-graphite`**:
+- `bold-template-pack/selection-index.json` (`slug: "katze-graphite"`)
+- `bold-template-pack/templates/katze-graphite/preview.md`
+- `bold-template-pack/templates/katze-graphite/design.md`
+- `bold-template-pack/templates/katze-graphite/template.html`
 
 ---
 
@@ -18,27 +24,42 @@ Esta guía documenta cómo recrear desde cero una presentación con la identidad
 
 ---
 
-## 2. Arquetipos de Slide del Estilo Katze
+## 2. Regla Obligatoria: Puntos Bayer 4×4 SIEMPRE Interactivos en HTML
 
-### A. Slides con textura punteada n8n (4 emplazamientos)
-Usar la malla Bayer 4×4 pixelada (`image-rendering: pixelated`, celdas `16×16 px`, rastro `#D16FFF → #9B5DE5`) posicionada donde nunca compita con el texto:
+Siempre que un slide HTML incluya la textura punteada n8n (malla Bayer 4×4, `image-rendering: pixelated`, celdas `16×16 px`), **DEBE ser interactiva en tiempo real** — nunca una imagen estática ni un canvas pintado una sola vez:
+
+1. **Rastro reactivo al cursor calibrado a escala:** Mapear `pointermove` usando el rectángulo escalado del canvas:
+   ```js
+   const col = Math.floor(((e.clientX - rect.left) / rect.width) * (canvas.width / 4));
+   const row = Math.floor(((e.clientY - rect.top) / rect.height) * (canvas.height / 4));
+   ```
+   Esto garantiza precisión exacta tanto en pantalla completa como dentro de un `<iframe>`.
+2. **Interpolación lineal + disolución FIFO Bayer 4×4:** Interpolar pasos entre celdas (`20ms` de desfase), retener `620ms`, disolver en `760ms` con corte `progress * progress * 16` e interpolar color `#D16FFF → #9B5DE5`.
+3. **Caminatas autónomas en reposo:** Cuando el cursor no está sobre el canvas, lanzar recorridos ortogonales con giros de 90° dentro de la zona segura de cada emplazamiento (y sembrar un rastro inicial al activar el slide).
+4. **Rendimiento y accesibilidad:** Ejecutar `requestAnimationFrame` solo en los canvas del `.slide.active` y respetar `prefers-reduced-motion: reduce`.
+
+### Los 4 emplazamientos disponibles (sin estorbar al contenido)
 - **`bottom` (`height: 440px`):** Portadas, titulares principales arriba y slides de colorimetría.
 - **`right` (`width: 780px`):** Slides narrativos con texto alineado a la izquierda (Brand Knowledge, Tipografía).
 - **`top` (`height: 360px`):** Slides con rejillas o tablas densas en la mitad inferior (Valores, comparativas).
 - **`diagonal-right` (`inset: 0`, gradiente `225deg`):** Slides de Misión/Visión, impacto ejecutivo y cierre.
 
-### B. Slide formato “Sistema diseñado como plano técnico”
+---
+
+## 3. Otros Arquetipos de Slide del Estilo Katze
+
+### A. Slide formato “Sistema diseñado como plano técnico”
 - Rejilla CSS de **5 columnas exactas** dentro de `1920×1080`: `110px 460px 620px 620px 110px` con `gap: 1px` sobre fondo `rgba(243,242,247,0.1)` (sin bordes dobles ni esquinas redondeadas).
 - Celdas de contenido con tipografía `Expletus Sans` y notas breves en `JetBrains Mono`.
 - Zonas punteadas (`#15151A`, puntos `1.5px` cada `20px`) reservadas para figuras sólidas de `/anatomy` con etiqueta `FIG_01`, `FIG_02`, etc.
 
-### C. Elementos flotantes (`/anatomy` + “Sobriedad en reposo”)
-- **Instrumentos `/anatomy`:** Sólidos isométricos generados con `iso-kit.mjs`, sombreado en 4 tonos grafito (`#16161E`..`#252532`) y una única pieza iluminada en `#D16FFF` / `#3E2466`. Flotan limpios sin marco extra o dentro de zonas punteadas.
-- **Cuadros “Sobriedad en reposo. Claridad al interactuar.”:** 3 cuadros redondeados (`radius: 26px`, `#15151B`, brillo interior blanco sutil) con el título breve directamente debajo en `Inter 300`, sin contenedor externo ni etiquetas decorativas.
+### B. Elementos flotantes interactivos (`/anatomy` + “Sobriedad en reposo”)
+- **Instrumentos `/anatomy`:** Sólidos isométricos generados con `iso-kit.mjs`, sombreado en 4 tonos grafito (`#16161E`..`#252532`) y una única pieza iluminada en `#D16FFF` / `#3E2466`. En HTML responden suavemente a hover/clic (`FIG_01` separación de capas Z, `FIG_02` carro vernier, `FIG_03`/`FIG_04` accionamiento al clic).
+- **Cuadros “Sobriedad en reposo. Claridad al interactuar.”:** 3 cuadros redondeados (`radius: 26px`, `#15151B`) monocromos en reposo que iluminan su brillo blanco/plata interior y acento violeta interno al pasar el mouse o interactuar (switcher `Web UI` / `Slides 16:9`, nodos + píldoras ancladas y stream binario vivo).
 
 ---
 
-## 3. Paleta y Tipografía a Escala `1920×1080`
+## 4. Paleta y Tipografía a Escala `1920×1080`
 
 - **Superficies:** `#16161B` (slide), `#1C1C23` / `#1E1E26` (paneles), `#2E1A47` (acento estructural).
 - **Acentos:** `#9B5DE5` (primario), `#D16FFF` (foco/brillo), `#714B67` (solo *Odoo Ready Partner*).
