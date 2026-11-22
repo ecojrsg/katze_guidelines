@@ -174,6 +174,116 @@
           </div>
         </div>
       </section>
+
+      <!-- Portable Global Skill Installation Kit -->
+      <section id="instalar-plantilla" class="ruled-section">
+        <div class="wrap">
+          <h2 class="v3-heading">Instalar la plantilla <code>katze-graphite</code> en otra computadora</h2>
+          <p class="v3-subhead">
+            En este equipo la plantilla vive en la skill global de <code>/frontend-slides</code>
+            (<code>~/.gemini/config/skills/frontend-slides/bold-template-pack/</code>). Aquí tienes
+            todos los archivos y el instalador portable incluidos en el repositorio para agregarla
+            en cualquier otra computadora.
+          </p>
+
+          <div class="install-files-ledger" aria-label="Archivos necesarios para instalar katze-graphite">
+            <div class="install-file-row">
+              <span class="install-file-path">INSTALL.md</span>
+              <p class="install-file-desc">Guía paso a paso para Windows, macOS, Linux, instalación manual y verificación.</p>
+              <a href="./skill/katze-frontend-slides/INSTALL.md" download="INSTALL.md" class="dl-link">Descargar .md ↓</a>
+            </div>
+            <div class="install-file-row">
+              <span class="install-file-path">install-template.mjs</span>
+              <p class="install-file-desc">Instalador automático en Node.js (0 dependencias): copia los 3 archivos y actualiza <code>selection-index.json</code>.</p>
+              <a href="./skill/katze-frontend-slides/install-template.mjs" download="install-template.mjs" class="dl-link">Descargar .mjs ↓</a>
+            </div>
+            <div class="install-file-row">
+              <span class="install-file-path">katze-graphite/preview.md</span>
+              <p class="install-file-desc">Tarjeta compacta que lee <code>/frontend-slides</code> al preseleccionar estilos.</p>
+              <a href="./skill/katze-frontend-slides/katze-graphite/preview.md" download="preview.md" class="dl-link">Descargar .md ↓</a>
+            </div>
+            <div class="install-file-row">
+              <span class="install-file-path">katze-graphite/design.md</span>
+              <p class="install-file-desc">Especificación completa de paleta, tipografía, arquetipos y regla obligatoria de Bayer 4×4 interactivo.</p>
+              <a href="./skill/katze-frontend-slides/katze-graphite/design.md" download="design.md" class="dl-link">Descargar .md ↓</a>
+            </div>
+            <div class="install-file-row">
+              <span class="install-file-path">katze-graphite/template.html</span>
+              <p class="install-file-desc">Presentación base autocontenida (<code>1920×1080</code>) con los 12 slides interactivos de referencia.</p>
+              <a href="./skill/katze-frontend-slides/katze-graphite/template.html" download="template.html" class="dl-link">Descargar .html ↓</a>
+            </div>
+            <div class="install-file-row">
+              <span class="install-file-path">katze-graphite/selection-index-entry.json</span>
+              <p class="install-file-desc">Objeto JSON exacto para registrar <code>katze-graphite</code> dentro de <code>selection-index.json</code>.</p>
+              <a href="./skill/katze-frontend-slides/katze-graphite/selection-index-entry.json" download="selection-index-entry.json" class="dl-link">Descargar .json ↓</a>
+            </div>
+          </div>
+
+          <div class="split-2">
+            <div class="split-cell">
+              <span class="archetype-tag">OPCIÓN A · 1 COMANDO (RECOMENDADA)</span>
+              <h3>Instalación automática con Node.js</h3>
+              <p>
+                Clona el repositorio <code>katze_guidelines</code> en la otra computadora (que ya
+                tenga instalada la skill <code>/frontend-slides</code>) y ejecuta:
+              </p>
+              <pre class="comp-code" style="margin-top: 16px" data-install-cmd></pre>
+              <div style="margin-top: 14px">
+                <button type="button" class="k-btn" data-copy-install-cmd>
+                  <span>Copiar comandos</span>
+                  <span>↗</span>
+                </button>
+              </div>
+            </div>
+
+            <div class="split-cell">
+              <span class="archetype-tag">OPCIÓN B · INSTALACIÓN MANUAL</span>
+              <h3>Rutas globales y pasos exactos</h3>
+              <ol class="install-steps-list">
+                <li>
+                  Abre <code>%USERPROFILE%\.gemini\config\skills\frontend-slides\bold-template-pack\</code>
+                  en Windows o <code>~/.gemini/config/skills/frontend-slides/bold-template-pack/</code>
+                  en macOS/Linux.
+                </li>
+                <li>
+                  Crea la carpeta <code>templates/katze-graphite/</code> y copia dentro
+                  <code>preview.md</code>, <code>design.md</code> y <code>template.html</code>.
+                </li>
+                <li>
+                  Abre <code>bold-template-pack/selection-index.json</code>, suma <code>+1</code> a
+                  <code>"template_count"</code> y pega la entrada JSON de abajo dentro de
+                  <code>"templates": [...]</code>.
+                </li>
+                <li>
+                  Listo: en cualquier chat nuevo pide <em>"usa /frontend-slides con katze-graphite"</em>.
+                </li>
+              </ol>
+            </div>
+          </div>
+
+          <div class="v3-block" style="margin-top: 36px">
+            <div class="v3-block-head">
+              <h3 class="v3-block-title">Entrada para <code>bold-template-pack/selection-index.json</code></h3>
+              <button type="button" class="k-btn" data-copy-install-json>
+                <span>Copiar JSON</span>
+                <span>↗</span>
+              </button>
+            </div>
+            <pre class="comp-code" data-install-json></pre>
+          </div>
+
+          <div class="v3-block" style="margin-top: 32px">
+            <div class="v3-block-head">
+              <h3 class="v3-block-title">Opción C · Prompt para que tu IA la instale sola en otra computadora</h3>
+              <button type="button" class="k-btn" data-copy-install-ai>
+                <span>Copiar prompt de instalación</span>
+                <span>↗</span>
+              </button>
+            </div>
+            <pre class="comp-code" data-install-ai-prompt></pre>
+          </div>
+        </div>
+      </section>
     </main>
 
     <footer class="v3-footer" data-site-footer></footer>

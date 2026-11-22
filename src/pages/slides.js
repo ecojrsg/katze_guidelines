@@ -24,14 +24,67 @@ function bindInlineViewerButton() {
   });
 }
 
-function mountRecreationPrompt() {
-  const pre = document.querySelector('[data-slides-prompt]');
-  const btn = document.querySelector('[data-copy-slides-prompt]');
-  if (pre) pre.textContent = FRONTEND_SLIDES_PROMPT;
-  bindCopyButton(btn, FRONTEND_SLIDES_PROMPT, {
-    copiedLabel: 'Prompt copiado',
-    toastMessage: 'Prompt de /frontend-slides copiado',
+const INSTALL_CLI_COMMANDS = `git clone https://github.com/ecojrsg/katze_guidelines.git
+cd katze_guidelines
+node skill/katze-frontend-slides/install-template.mjs
+
+# Si la skill está en una ruta personalizada:
+# node skill/katze-frontend-slides/install-template.mjs --skill-dir "RUTA/A/frontend-slides"`;
+
+const SELECTION_INDEX_ENTRY = `{
+  "slug": "katze-graphite",
+  "name": "Katze Graphite",
+  "tagline": "Warm graphite dark canvas (0% pure black) with interactive n8n Bayer 4x4 dotted trails, 1px technical blueprint grids, and isometric /anatomy instruments.",
+  "mood": ["technical", "minimalist", "editorial", "architectural", "calm", "high-precision"],
+  "tone": ["authoritative", "sober", "modern", "transparent", "engineered"],
+  "formality": "high",
+  "density": "low",
+  "scheme": "dark",
+  "best_for": "Brand guidelines, engineering & DevOps consulting decks, Odoo ERP architecture proposals, technical executive reviews, and product design systems that want sober monochrome rest states with interactive Bayer 4x4 violet trails and solid isometric /anatomy diagrams.",
+  "avoid_for": "Playful consumer campaigns, loud neon pitches, or decks that require bright white daylight backgrounds.",
+  "preview_md": "bold-template-pack/templates/katze-graphite/preview.md",
+  "design_md": "bold-template-pack/templates/katze-graphite/design.md"
+}`;
+
+const INSTALL_AI_PROMPT = `Instala la plantilla "katze-graphite" incluida en este repositorio (skill/katze-frontend-slides/katze-graphite/) dentro de mi skill global /frontend-slides:
+1. Ejecuta "node skill/katze-frontend-slides/install-template.mjs" (o copia preview.md, design.md y template.html a bold-template-pack/templates/katze-graphite/ y agrega selection-index-entry.json a bold-template-pack/selection-index.json actualizando template_count).
+2. Verifica que selection-index.json sea JSON válido y contenga el slug "katze-graphite".`;
+
+function mountCopyBlock(preSelector, btnSelector, content, toastMessage) {
+  const pre = document.querySelector(preSelector);
+  const btn = document.querySelector(btnSelector);
+  if (pre) pre.textContent = content;
+  bindCopyButton(btn, content, {
+    copiedLabel: 'Copiado',
+    toastMessage,
   });
+}
+
+function mountRecreationPrompt() {
+  mountCopyBlock(
+    '[data-slides-prompt]',
+    '[data-copy-slides-prompt]',
+    FRONTEND_SLIDES_PROMPT,
+    'Prompt de /frontend-slides copiado'
+  );
+  mountCopyBlock(
+    '[data-install-cmd]',
+    '[data-copy-install-cmd]',
+    INSTALL_CLI_COMMANDS,
+    'Comandos de instalación copiados'
+  );
+  mountCopyBlock(
+    '[data-install-json]',
+    '[data-copy-install-json]',
+    SELECTION_INDEX_ENTRY,
+    'Entrada JSON de selection-index copiada'
+  );
+  mountCopyBlock(
+    '[data-install-ai-prompt]',
+    '[data-copy-install-ai]',
+    INSTALL_AI_PROMPT,
+    'Prompt de instalación automática copiado'
+  );
 }
 
 function initSlidesPage() {

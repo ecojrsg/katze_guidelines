@@ -1,0 +1,27 @@
+{
+  "slug": "katze-graphite",
+  "name": "Katze Graphite",
+  "tagline": "Warm graphite dark canvas (0% pure black) with interactive n8n Bayer 4x4 dotted trails, 1px technical blueprint grids, and isometric /anatomy instruments.",
+  "mood": [
+    "technical",
+    "minimalist",
+    "editorial",
+    "architectural",
+    "calm",
+    "high-precision"
+  ],
+  "tone": [
+    "authoritative",
+    "sober",
+    "modern",
+    "transparent",
+    "engineered"
+  ],
+  "formality": "high",
+  "density": "low",
+  "scheme": "dark",
+  "best_for": "Brand guidelines, engineering & DevOps consulting decks, Odoo ERP architecture proposals, technical executive reviews, and product design systems that want sober monochrome rest states with interactive Bayer 4x4 violet trails and solid isometric /anatomy diagrams.",
+  "avoid_for": "Playful consumer campaigns, loud neon pitches, or decks that require bright white daylight backgrounds.",
+  "preview_md": "bold-template-pack/templates/katze-graphite/preview.md",
+  "design_md": "bold-template-pack/templates/katze-graphite/design.md"
+}
